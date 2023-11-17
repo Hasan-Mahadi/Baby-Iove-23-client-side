@@ -1,0 +1,9 @@
+.bg{
+    background-color:rgba(107, 249, 249, 0.848);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    min-height: 50vh;
+    background-position: center;
+    
+}
