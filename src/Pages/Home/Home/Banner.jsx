@@ -14,7 +14,7 @@ const Banner = () => {
 
       <div className='text-end w-full'>
 
-        <div className="carousel	w-full		 mt-5 mb-10 	">
+        <div className="carousel	w-full		 mt-5 	">
           <div id="slide1" className="carousel-item relative w-full	">
 
             <img className='w-5/6 h-5/6 ml-28 rounded-lg ' src="https://img.freepik.com/free-photo/father-with-toddler-daughter_1303-9155.jpg?w=1060&t=st=1698767523~exp=1698768123~hmac=1e252a5d0c09a4d6572817d3343a02db56414d3b9565ce703b5dd3bbbfec3140" />
@@ -31,9 +31,9 @@ const Banner = () => {
 
        
         <div className='text-center hover:text-3xl transform hover:scale-110  transition delay-150 duration-300 ease-in-out '>
-                    <Link to='categories/'> <button className="btn btn-primary bg-cyan-900	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go To  <span className='text-red-600'>Categories</span></p> <FaBorderAll/> </button></Link>
+                    <Link to='categories/:id'> <button className="btn btn-primary bg-cyan-900	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go To  <span className='text-red-600'>Categories</span></p> <FaBorderAll/> </button></Link>
 
-                    <Link to='categories/'> <button className="btn btn-primary bg-cyan-900 ml-10	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go to al <span className='text-red-600'>products</span> </p><FaBorderAll/> </button></Link>
+                    <Link to='categories/:id'> <button className="btn btn-primary bg-cyan-900 ml-10	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go to al <span className='text-red-600'>products</span> </p><FaBorderAll/> </button></Link>
 
 
                 </div>
@@ -75,9 +75,9 @@ const Banner = () => {
                 <p> Lorem ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur </p>
 
                 <div className='text-center hover:text-3xl transform hover:scale-110  transition delay-150 duration-300 ease-in-out '>
-                    <Link to='categories/'> <button className="btn btn-primary bg-cyan-900	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go To Categories</p><FaBorderAll/> </button></Link>
+                    <Link to='categories/:id'> <button className="btn btn-primary bg-cyan-900	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go To Categories</p><FaBorderAll/> </button></Link>
 
-                    <Link to='categories/'> <button className="btn btn-primary bg-cyan-900 ml-10	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go to al products</p><FaBorderAll/> </button></Link>
+                    <Link to='categories/:id'> <button className="btn btn-primary bg-cyan-900 ml-10	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go to al products</p><FaBorderAll/> </button></Link>
 
 
                 </div>
@@ -107,9 +107,9 @@ const Banner = () => {
                 <p> Lorem ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur </p>
 
                 <div className='text-center hover:text-3xl transform hover:scale-110  transition delay-150 duration-300 ease-in-out '>
-                    <Link to='categories/'> <button className="btn btn-primary bg-cyan-900	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go To Categories</p><FaBorderAll/> </button></Link>
+                    <Link to='categories/:id'> <button className="btn btn-primary bg-cyan-900	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go To Categories</p><FaBorderAll/> </button></Link>
 
-                    <Link to='categories/'> <button className="btn btn-primary bg-cyan-900 ml-10	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go to al products</p><FaBorderAll/> </button></Link>
+                    <Link to='categories/:id'> <button className="btn btn-primary bg-cyan-900 ml-10	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go to al products</p><FaBorderAll/> </button></Link>
 
 
                 </div>
@@ -136,9 +136,9 @@ const Banner = () => {
                 <p> Lorem ipsum dolor sit amet, consectetur ipsum dolor sit amet, consectetur </p>
 
                 <div className='text-center hover:text-3xl transform hover:scale-110  transition delay-150 duration-300 ease-in-out '>
-                    <Link to='categories/'> <button className="btn btn-primary bg-cyan-900	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go To Categories</p><FaBorderAll/> </button></Link>
+                    <Link to='categories/:id'> <button className="btn btn-primary bg-cyan-900	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go To Categories</p><FaBorderAll/> </button></Link>
 
-                    <Link to='categories/'> <button className="btn btn-primary bg-cyan-900 ml-10	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go to al products</p><FaBorderAll/> </button></Link>
+                    <Link to='categories/:id'> <button className="btn btn-primary bg-cyan-900 ml-10	rounded-full  text-1xl  mt-10 text-cyan-200 "><p className='font-bold'>Go to al products</p><FaBorderAll/> </button></Link>
 
 
                 </div>

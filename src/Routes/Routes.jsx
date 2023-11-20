@@ -5,6 +5,7 @@ import Blogs from "../Blog/Blogs";
 import About from "../About/About";
 import Login from "../Login/Login";
 import Categories from "../Pages/Home/Home/Categories/Categories";
+  
 
 const router = createBrowserRouter([
     {
@@ -28,9 +29,10 @@ const router = createBrowserRouter([
           element:<Login></Login>
         },
         {
-          path:'categories/',
+          path:'categories/:id',
           element:<Categories></Categories>
-        }
+        },
+      
       ]
     },
   ]);
@@ -38,3 +40,10 @@ const router = createBrowserRouter([
 
 
   export default router;
+
+
+
+  // {
+  //   path:'category/:id',
+  //   element:<Category2></Category2>
+  // }
