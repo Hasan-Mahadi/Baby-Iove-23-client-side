@@ -5,6 +5,8 @@ import Blogs from "../Blog/Blogs";
 import About from "../About/About";
 import Login from "../Login/Login";
 import Categories from "../Pages/Home/Home/Categories/Categories";
+import ProductDtls from "../Layout/PLayout";
+import ProductsAll from "../Pages/ProductsAll/ProductsAll/ProductsAll";
   
 
 const router = createBrowserRouter([
@@ -30,11 +32,25 @@ const router = createBrowserRouter([
         },
         {
           path:'categories/:id',
-          element:<Categories></Categories>
+          element:<Categories></Categories>,
+          loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
         },
       
+      
       ]
+
     },
+
+    {
+      path:'productsdtls',
+      element:<ProductDtls></ProductDtls>,
+      children:[
+        {
+          path: 'id',
+          element: <ProductsAll></ProductsAll>
+        }
+      ]
+    }
   ]);
 
 

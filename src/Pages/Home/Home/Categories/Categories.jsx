@@ -1,14 +1,18 @@
 import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
 import './Categories.css';
-import { Link, NavLink, useParams } from 'react-router-dom';
+import { Link, NavLink, useLoaderData, useParams } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight, FaBorderAll, } from 'react-icons/fa';
+import PCard from '../../PCard/PCard';
 
 
 const Categories = () => {
     const [categories, setcategories] = useState([]);
 
     const { id } = useParams();
+    const categorisProdut = useLoaderData();
+
+
     useEffect(() => {
         fetch('http://localhost:5000/categories')
             .then(res => res.json())
@@ -23,8 +27,8 @@ const Categories = () => {
 
 
                 <div className='flex'>
-                    <div className="card w-72 bg4    ml-40 bg-base-100 shadow-xl">
-                        <figure className='mt-10'><img className='' src="https://img.freepik.com/free-photo/little-baby-sits-wicker-basket_1304-5640.jpg?w=996&t=st=1700238916~exp=1700239516~hmac=48aeb30379ac487b3eb54dff8f4b44b20ed8528a57b12d1e779fbf7cd8103ba5" alt="Shoes" /></figure>
+                    <div className="card w-72 bg4    ml-20 bg-base-100 shadow-xl">
+                        <figure className='mt-10'><img className='' src="https://img.freepik.com/free-psd/baby-boy-mockup_23-2147685643.jpg?w=996&t=st=1700841419~exp=1700842019~hmac=3d050d79e7de460753d823791c0e365860eaa5903c4046e807e6607114f42d2b" alt="Shoes" /></figure>
 
                         <div className="card-body  ">
                             <div className='flex underline underline-offset-8'>
@@ -36,10 +40,10 @@ const Categories = () => {
                             <div className=' mt-5   font-bold' >
                                 {
                                     categories.map(category => <p
-                                        className='mt-5 btn btn-ghost normal'
+                                        className='mt-5 btn btn-ghost font-bold normal'
                                         key={category.id}>
 
-                                        <NavLink className={({ isActive }) => (isActive ? 'text-blue-600  btn btn-ghost normal' : '')} to={`/categories/${category.id}`}>{category.name} </NavLink><  FaArrowRight />
+                                        <NavLink className={({ isActive }) => (isActive ? 'text-blue-600  ' : '')} to={`/categories/${category.id}`}>{category.name} </NavLink><  FaArrowRight />
 
 
                                     </p>)
@@ -50,8 +54,18 @@ const Categories = () => {
 
                         </div>
                     </div>
-                    <div className='ml-96 mt-20 font-bold  text-2xl'>
-                        <h1>Details for category: {id}</h1>
+
+                    <div >
+                        <h1 className='ml-96 mt-20 mb-10 font-bold  text-2xl'>Details for category: {categorisProdut.length}</h1>
+                        <div className='  ml-40 grid grid-cols-3 gap-12'>
+                            {
+                                categorisProdut.map(products => <PCard
+                                    key={products._id}
+                                    products={products}
+                                ></PCard>)
+                            }
+                        </div>
+
                     </div>
                 </div>
 
