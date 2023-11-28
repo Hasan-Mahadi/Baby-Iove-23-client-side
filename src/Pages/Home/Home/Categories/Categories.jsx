@@ -56,7 +56,10 @@ const Categories = () => {
                     </div>
 
                     <div >
-                        <h1 className='ml-96 mt-20 mb-10 font-bold  text-2xl'>Details for category: {categorisProdut.length}</h1>
+                        <button className=" hover:bg-blue-700 font-bold py-2 px-4 ml-96 mt-10 mb-10 font-bold  text-2xl rounded-full text-cyan-200 bg-cyan-700">
+                            <h1 className=''>Items For Category:   {categorisProdut.length}</h1>
+                        </button>
+
                         <div className='  ml-40 grid grid-cols-3 gap-12'>
                             {
                                 categorisProdut.map(products => <PCard
