@@ -26,9 +26,9 @@ const Categories = () => {
             <div className='bg4 '>
 
 
-                <div className='flex'>
+                <div className='flex pt-14'>
                     <div className="card w-72 bg4    ml-20 bg-base-100 shadow-xl">
-                        <figure className='mt-10'><img className='' src="https://img.freepik.com/free-psd/baby-boy-mockup_23-2147685643.jpg?w=996&t=st=1700841419~exp=1700842019~hmac=3d050d79e7de460753d823791c0e365860eaa5903c4046e807e6607114f42d2b" alt="Shoes" /></figure>
+                        <figure className=''><img className='' src="https://img.freepik.com/free-psd/baby-boy-mockup_23-2147685643.jpg?w=996&t=st=1700841419~exp=1700842019~hmac=3d050d79e7de460753d823791c0e365860eaa5903c4046e807e6607114f42d2b" alt="Shoes" /></figure>
 
                         <div className="card-body  ">
                             <div className='flex underline underline-offset-8'>
@@ -56,7 +56,7 @@ const Categories = () => {
                     </div>
 
                     <div >
-                        <button className=" hover:bg-blue-700 font-bold py-2 px-4 ml-96 mt-10 mb-10 font-bold  text-2xl rounded-full text-cyan-200 bg-cyan-700">
+                        <button className=" hover:bg-blue-700 font-bold py-2 px-4 ml-96  mb-10 font-bold  text-2xl rounded-full text-cyan-200 bg-cyan-700">
                             <h1 className=''>Items For Category:   {categorisProdut.length}</h1>
                         </button>
 

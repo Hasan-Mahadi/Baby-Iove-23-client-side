@@ -3,10 +3,17 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Blogs from "../Blog/Blogs";
 import About from "../About/About";
-import Login from "../Login/Login";
+
 import Categories from "../Pages/Home/Home/Categories/Categories";
 import ProductDtls from "../Layout/ProductDtls";
 import ProductsAll from "../Pages/ProductsAll/ProductsAll/ProductsAll";
+
+
+
+import Login from "../Pages/Login/Login";
+import Signup from "../Pages/Login/Signup";
+
+
 
 
 const router = createBrowserRouter([
@@ -27,15 +34,25 @@ const router = createBrowserRouter([
         element: <About></About>
       },
       {
-        path: 'login/',
+        path: '/login',
         element: <Login></Login>
+
       },
+      {
+        path: '/sign',
+        element: <Signup></Signup>
+      },
+
+
+
+
+
       {
         path: 'categories/:id',
         element: <Categories></Categories>,
         loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`),
       },
-      
+
 
 
     ]
@@ -49,8 +66,31 @@ const router = createBrowserRouter([
       {
         path: ':id',
         element: <ProductsAll></ProductsAll>,
-        loader:({params}) => fetch(`http://localhost:5000/products/${params.id}`)
-      }
+        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+      },
+      {
+        path: 'blogs/',
+        element: <Blogs></Blogs>
+      },
+
+      {
+        path: 'about/',
+        element: <About></About>
+      },
+      {
+        path: 'login/',
+        element: <Login></Login>
+
+      },
+      {
+        path: 'sign/',
+        element: <Signup></Signup>
+      },
+
+
+
+
+
     ]
   }
 ]);

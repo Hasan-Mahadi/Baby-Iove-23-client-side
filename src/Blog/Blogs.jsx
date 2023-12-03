@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 const Blogs = () => {
     return (
         <section className='bg1'>
-            <div className='bg1'>
+            <div className='bg1 pt-20'>
             <div className=''>
                 <h4 className='text-cayan-600 text-cyan-600 font-bold italic text-5xl  text-center mb-5'>Wellcome To Our <span className='text-red-500'>Blog</span> Page!!!</h4>
             </div>
 
-            <div className=' p-20 bg '>
-            <div className="collapse bg1 mt-40 collapse-plus bg-base-200">
+            <div className=' p-20  '>
+            <div className="collapse bg1  collapse-plus bg-base-200">
                 <input type="radio" name="my-accordion-3" checked="checked" />
                 <div className="collapse-title text-cyan-600 font-bold italic text-xl text-center font-medium">
               About Our Products

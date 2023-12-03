@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const About = () => {
     return (
         <section className='bg1'>
-            <div className='bg1'>
+            <div className='bg1 pt-20'>
             <div className=''>
                 <h4 className='text-cyan-600	  font-bold italic text-5xl  text-center mb-5'>Wellcome To Our  <span className='text-red-500'>About</span> Page!!!</h4>
             </div>
