@@ -3,10 +3,29 @@ import './Login.css';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 
 const Login = () => {
+
+    const { signIn } = useContext(AuthContext);
+
+
+    const handlelogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.log(error));
+    }
+
 
     useEffect(() => {
         Aos.init({ duration: 3000 });
@@ -21,30 +40,35 @@ const Login = () => {
 
                     <div className="hero-content flex-col lg:flex-row-reverse" >
 
-                        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 bg-cyan-500"data-aos='fade-down-left' >
-                            <form className="card-body">
+                        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 bg-cyan-500" data-aos='fade-down-left' >
+
+
+                            <form onSubmit={handlelogin} className="card-body">
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" placeholder="email" className="input input-bordered" required />
+                                    <input type="text" name='email' placeholder="email" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" placeholder="password" className="input input-bordered" required />
+                                    <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     </label>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn btn-primary">Login</button>
+
+                                    <input className="btn btn-primary" type="submit" value="login" />
                                 </div>
-                                <div className='text-center mt-3'>
-                                    <p className='font-bold'>Are you New?  <Link to='/sign'  className='btn btn-primary'>SignUp<FaArrowRight /> </Link></p>
+                                <div className='text-center mt-10'>
+                                    <p className='font-bold'>Are you New?  <Link to='/sign' className='btn btn-primary'>SignUp<FaArrowRight /> </Link></p>
                                 </div>
                             </form>
+
+
                         </div>
 
 
