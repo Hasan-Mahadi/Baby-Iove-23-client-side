@@ -36,7 +36,7 @@ const PCard = ({ products }) => {
             <span className='font-bold'>  {rating?.number}</span>
            </div>
                 <div className=" justify-center mb-5 ">
-                <Link to={`/productsdtls/${_id}`}> <button className="btn btn-primary 	rounded-full  text-cyan-200 bg-cyan-700   "><p className='font-bold '>Read More</p><  FaArrowRight /> </button></Link>
+                <Link to={`/productsdtls/${_id}`}> <button className="btn btn-primary 	rounded-full  text-cyan-200 bg-cyan-700   "><p className='font-bold '>Buy Now </p><  FaArrowRight /> </button></Link>
                 </div>
 
             </div>

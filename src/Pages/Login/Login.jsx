@@ -1,18 +1,26 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Aos from 'aos';
 import 'aos/dist/aos.css'
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
+
 
 
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+   
 
     const { signIn } = useContext(AuthContext);
 
 
     const handlelogin = event => {
+        
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
@@ -22,6 +30,14 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+          
+                  Swal.fire({
+                    title: "Alhamdulillah !",
+                    text: "Login Successfully Completed !",
+                    icon: "success"
+                  });
+           navigate(from,{replace:true});
+
             })
             .catch(error => console.log(error));
     }
@@ -44,6 +60,7 @@ const Login = () => {
 
 
                             <form onSubmit={handlelogin} className="card-body">
+    
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
@@ -61,7 +78,7 @@ const Login = () => {
                                 </div>
                                 <div className="form-control mt-6">
 
-                                    <input className="btn btn-primary" type="submit" value="login" />
+                                    <input  className="btn btn-primary" type="submit" value="login" />
                                 </div>
                                 <div className='text-center mt-10'>
                                     <p className='font-bold'>Are you New?  <Link to='/sign' className='btn btn-primary'>SignUp<FaArrowRight /> </Link></p>

@@ -4,6 +4,7 @@ import './Categories.css';
 import { Link, NavLink, useLoaderData, useParams } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight, FaBorderAll, } from 'react-icons/fa';
 import PCard from '../../PCard/PCard';
+import Search from './Search';
 
 
 const Categories = () => {
@@ -19,12 +20,14 @@ const Categories = () => {
             .then(data => setcategories(data))
             .catch(error => console.error(error))
     }, [])
+ 
 
     return (
 
         <section className='bg4'>
             <div className='bg4 '>
 
+           
 
                 <div className='flex pt-14'>
                     <div className="card w-72 bg4    ml-20 bg-base-100 shadow-xl">
@@ -55,12 +58,17 @@ const Categories = () => {
                         </div>
                     </div>
 
+
+
+
+
+
                     <div >
                         <button className=" hover:bg-blue-700 font-bold py-2 px-4 ml-96  mb-10 font-bold  text-2xl rounded-full text-cyan-200 bg-cyan-700">
                             <h1 className=''>Items For Category:   {categorisProdut.length}</h1>
                         </button>
 
-                        <div className='  ml-40 grid grid-cols-3 gap-12'>
+                        <div className='  ml-40 grid grid-cols-3 gap-14'>
                             {
                                 categorisProdut.map(products => <PCard
                                     key={products._id}
@@ -70,6 +78,11 @@ const Categories = () => {
                         </div>
 
                     </div>
+
+                   <Search></Search>
+
+
+
                 </div>
 
 

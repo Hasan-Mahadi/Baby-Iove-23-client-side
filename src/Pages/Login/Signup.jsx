@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Aos from 'aos';
@@ -7,36 +7,43 @@ import 'aos/dist/aos.css'
 import { useEffect } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 
-const Signup = () => {
 
-    const [isSignUpSuccessful, setIsSignUpSuccessfull] = useState(false);
+
+
+const Signup = () => {
 
 
     const { createUser } = useContext(AuthContext);
 
     const handleSignup = event => {
-        setIsSignUpSuccessfull(true);
+
 
 
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
-        const email = form.email.value;
+
+        const email = form.email?.value;
         const password = form.password.value;
-        console.log(name, email, password);
+        console.log(email, password);
 
         createUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+
+
+
+
+
+
             })
-            .catch(error => console.log(error));
+
+
+
+
     }
 
 
-    const handleCloseModal = () => {
-        setIsSignUpSuccessfull(false);
-    };
 
 
 
@@ -65,13 +72,14 @@ const Signup = () => {
                                     <label className="label">
                                         <span className="label-text">Name</span>
                                     </label>
-                                    <input type="text" name='name' placeholder="name" className="input input-bordered" required />
+                                    <input type="name" name='name' placeholder="name" className="input input-bordered" />
+
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="text" name='email' placeholder="email" className="input input-bordered" required />
+                                    <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -89,9 +97,13 @@ const Signup = () => {
 
                                 </div>
 
+                              
+
                                 <div className='text-center mt-10'>
                                     <p className='font-bold'>Allready Have An Account?  <Link to='/login' className='btn btn-primary'>Login<FaArrowRight /> </Link></p>
+
                                 </div>
+
                             </form>
                         </div>
 
@@ -102,23 +114,8 @@ const Signup = () => {
 
                     </div>
 
-                    <div className=''>
-                        {
-                            isSignUpSuccessful && (
-                                <div className="modal-box">
-                                    
-                                    <p className="py-4">SignUp Successfully Completed!!</p>
-                                    <div className="modal-action">
-                                        <form method="dialog">
 
-                                            <button onClick={handleCloseModal} className="btn">Close</button>
 
-                                        </form>
-                                    </div>
-                                </div>
-
-                            )}
-                    </div>
 
 
                 </div>
