@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       {
         path: 'categories/:id',
         element:<PrivateRout> <Categories></Categories></PrivateRout>,
-        loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`),
+        loader: ({ params }) => fetch(`https://baby-love-23-server.vercel.app/categories/${params.id}`),
       },
 
 
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
       {
         path: ':id',
         element: <ProductsAll></ProductsAll>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+        loader: ({ params }) => fetch(`https://baby-love-23-server.vercel.app/products/${params.id}`)
       },
       {
         path: 'blogs/',

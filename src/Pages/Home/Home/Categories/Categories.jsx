@@ -15,7 +15,7 @@ const Categories = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://baby-love-23-server.vercel.app/categories')
             .then(res => res.json())
             .then(data => setcategories(data))
             .catch(error => console.error(error))
